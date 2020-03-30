@@ -1,9 +1,21 @@
 from django.urls import path
 from .views import PostListView, PostDetailView, PostCreateView, PostUpdaetView, PostDeleteView, UserPostListView
 from  .import views
+from .sitemaps import PostSitemap,StaticViewSitemap,StaticViewSitemap1,StaticViewSitemapc
+from django.contrib.sitemaps.views import sitemap
+from django.conf.urls import static
+
+sitemaps={
+    'posts':PostSitemap,
+    'static':StaticViewSitemap,
+    's':StaticViewSitemap1,
+    'c':StaticViewSitemapc,
+
+}
 
 urlpatterns = [
     path('',views.home,name='home'),
+    path('sitemap.xml',sitemap,{'sitemaps':sitemaps}),
     path('blog/',PostListView.as_view(),name='blog-home'),
     path('user/<str:username>',UserPostListView.as_view(),name='user-posts'),
     path('post/<int:pk>/',PostDetailView.as_view(),name='post-detail'),
