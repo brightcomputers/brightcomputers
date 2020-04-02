@@ -113,8 +113,16 @@
               width:100%;
             }
             #blogprofile{
-              height: 50px;
-              width:50px;
+              height: 60px;
+              width:60px;
+            }
+            #userphoto{
+              height: 40px;
+              width:40px;
+            }
+            #userphoto1{
+              height: 40px;
+              width:40px;
             }
             #propic{
               height: 50px;
@@ -156,8 +164,16 @@
           width:100%;
         }
         #blogprofile{
-          height: 50px;
-          width:50px;
+          height: 60px;
+          width:60px;
+        }
+        #userphoto{
+          height: 40px;
+          width:40px;
+        }
+        #userphoto1{
+          height: 40px;
+          width:40px;
         }
         #propic{
           height: 50px;
@@ -226,8 +242,16 @@
     }
 
     #blogprofile{
-      height: 50px;
-      width:50px;
+      height: 60px;
+      width:60px;
+    }
+    #userphoto{
+      height: 40px;
+      width:40px;
+    }
+    #userphoto1{
+      height: 40px;
+      width:40px;
     }
     #courses{
        width:300px;
