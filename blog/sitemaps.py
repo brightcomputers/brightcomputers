@@ -3,9 +3,9 @@ from blog.models import Post
 from django.urls import reverse
 
 class PostSitemap(Sitemap):
-
-    def items(self):
-        return Post.objects.all()
+    pass
+    #def items(self):
+        #return Post.objects.all()
 
 class StaticViewSitemap(Sitemap):
     def items(self):
