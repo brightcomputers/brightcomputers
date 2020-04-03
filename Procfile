@@ -1,1 +1,1 @@
-web: gunicorn bright.wsgi --log-file -
+web: gunicorn bright.wsgi 
