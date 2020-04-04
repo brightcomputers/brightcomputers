@@ -16,6 +16,11 @@
                 {{ u_form|crispy }}
                 {{ p_form|crispy }}
             </fieldset>
+            <fieldset class="form-group">
+            <div class="d-flex flex-column">
+                <a class="l-auto" href="{% url 'password_change' %}">Change password</a>
+            </div>
+            </fieldset>
             <div class="form-group">
                 <button type="submit" class="btn btn-outline-info">Update</button>
             </div>

@@ -27,6 +27,8 @@ SECRET_KEY = '$k=%h&3zhg83n-k%l@=8(*x-vtgf&b-tv$=$^^%d!hye@9+)$_'
 DEBUG = True
 
 ALLOWED_HOSTS = ['brightcomputers.herokuapp.com']
+if DEBUG:
+    EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
 
 
 # Application definition
@@ -62,7 +64,7 @@ ROOT_URLCONF = 'bright.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
