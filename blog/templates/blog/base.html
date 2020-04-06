@@ -51,7 +51,7 @@
                    <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                        {% if request.user.profile.image %}
-                       <img src="{{ user.profile.image.url }}" class="rounded-circle account-img navbar-img" width="30px" height="25px" id="propic" >
+                       <img src="{{ request.user.profile.image.url }}" class="rounded-circle account-img navbar-img" width="30px" height="25px" id="propic" >
 
                        {% else %}
                        <img src="/media/full.jpg" alt="" class="rounded-circle account-img navbar-img" width="30px" height="25px" id="propic">
