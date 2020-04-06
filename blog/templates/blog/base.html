@@ -21,53 +21,65 @@
 <script type="text/javascript" src="{%static 'blog/bootstrap.bundle.js'%}"></script>
 <script type="text/javascript" src="{%static 'blog/typed.min.js'%}"></script>
 
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand text-warning font-weight-bold" href="{%url 'home'%}"><big class="active">BRIGHT CMPUTERS</big></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse text-center" id="collapsenavbar">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{%url 'home'%}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{%url 'blog-courses'%}">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{%url 'blog-services'%}">Services</a>
-                    </li>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
 
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{%url 'blog-home'%}">Blog</a>
-                    </li>
+       <a class="navbar-brand text-warning font-weight-bold" href="{%url 'home'%}"><big class="active">BRIGHT CMPUTERS</big></a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">
+           <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse text-center" id="collapsenavbar">
+           <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                   <a class="nav-link text-white" href="{%url 'home'%}">Home</a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link text-white" href="{%url 'blog-courses'%}">Courses</a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link text-white" href="{%url 'blog-services'%}">Services</a>
+               </li>
 
-                    <!--<li class="nav-item">
-                        <a class="nav-link text-white" href="form.html">Registration</a>
-                    </li>-->
-                    {%if user.is_authenticated%}
-                        <li class="nav-item">
-                            <a href="{% url 'post-create' %}" class="nav-link text-white">Post</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{% url 'logout' %}" class="nav-link text-white">Logout</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{% url 'profile' %}" class="nav-link text-white">profile</a>
-                        </li>
-                    {%else%}
-                        <li class="nav-item">
-                            <a href="{% url 'login' %}"class="nav-link text-white">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{% url 'register' %}"class="nav-link text-white">SignUp</a>
-                        </li>
-                    {%endif%}
-                </ul>
-            </div>
-        </div>
-    </nav>
+               <li class="nav-item">
+                   <a class="nav-link text-white" href="{%url 'blog-home'%}">Blog</a>
+               </li>
+             </ul>
+               <!--<li class="nav-item">
+                   <a class="nav-link text-white" href="form.html">Registration</a>
+               </li>-->
+               <ul class="navbar-nav">
+               {% if request.user.is_authenticated %}
+                   <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       {% if request.user.profile.image %}
+                       <img src="{{ user.profile.image.url }}" class="rounded-circle account-img navbar-img" width="30px" height="25px" id="propic" >
+
+                       {% else %}
+                       <img src="/media/full.jpg" alt="" class="rounded-circle account-img navbar-img" width="30px" height="25px" id="propic">
+                       {% endif %}
+                       <span>Hi {{ request.user|capfirst }}</span>
+                       </a>
+                       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                       <a class="dropdown-item bg-dark text-white" href="{% url 'post-create' %}" >Create Post</a>
+                       <a class="dropdown-item bg-dark text-white" href="{% url 'profile' %}" >My Profile</a>
+                       <a class="dropdown-item bg-dark text-white" href="{% url 'password_change' %}" >Change Password</a>
+                       <a class="dropdown-item bg-dark text-white" href="{% url 'logout' %}" >Logout</a>
+
+
+                     </div>
+                   </li>
+               {%else%}
+                   <li class="nav-item">
+                       <a href="{% url 'login' %}"class="nav-link text-white">Login</a>
+                   </li>
+                   <li class="nav-item">
+                       <a href="{% url 'register' %}"class="nav-link text-white">SignUp</a>
+                   </li>
+               {%endif%}
+           </ul>
+       </div>
+
+</nav>
+
 
 {% if messages %}
     {% for message in messages %}

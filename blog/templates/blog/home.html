@@ -119,10 +119,45 @@ body{
   border:3px solid blue;
   border-radius:0px 50px 0px 50px;
 }
+
 .aimage:hover{
   border-radius:50px 0px 50px 0px;
 
 
+}
+
+#bg{
+  border:2px solid blue;
+  border-radius:0px 50px 0px 50px;
+}
+#bg:hover{
+  border-radius:50px 0px 50px 0px;
+}
+
+#bg1{
+  border:2px solid yellow;
+  border-radius:0px 50px 0px 50px;
+}
+#bg1:hover{
+  border-radius:50px 0px 50px 0px;
+}
+
+#bg2{
+  border:2px solid red;
+  border-radius:0px 50px 0px 50px;
+}
+#bg2:hover{
+  border-radius:50px 0px 50px 0px;
+}
+#hd{
+  color:pink;
+  font-size:40px;
+  font-weight:bold;
+}
+#pt{
+  color:white;
+  font-size:20px;
+  font-weight:bold;
 }
 .p{
   margin-bottom: 30px;
@@ -144,27 +179,27 @@ h2{
     window.onload = function () {
         console.log("loaded")
         var typed = new Typed('#typed', {
-            strings: ["Welcome to Bright Computers", "Learn Python", "Web development", "Data Science", "Machine Learning", "and other awesome programming concepts :)"],
+            strings: ["Welcome to Bright Computers","We develop Web Applications ", " We provide courses on New Technologies","Learn Python", "Web development", "Data Science", "Machine Learning", "and programming and other concepts :)"],
             backSpeed: 15,
             smartBackspace: true,
             backDelay: 1200,
             startDelay: 1000,
-            typeSpeed: 30,
+            typeSpeed: 20,
             loop: true,
         });
     };
 </script>
-   <section class="jumbotron text-center">
-     <div class="container">
+   <section class="jumbotron text-center " style="background: #002f0b;">
+     <div class="container primary">
          <img src="/static/bicon.png" alt="logo" width="120">
-         <h1 class="jumbotron-heading"><span id="typed"></span></h1>
-         <p class="lead text-muted">are you Confused on which course to take?  Browse courses and find out
+         <h1 id="hd"class="jumbotron-heading"><span id="typed"></span></h1>
+         <p id ="pt" class="lead text-muted">are you Confused on which course to take?  Browse courses and find out
              the best course for you. Its free!<br>Bright Computers is ready to teach basics and those coding
              techniques to people in short time .</p>
          <p>
-             <a href="/blog" class="btn btn-danger my-2">Browse Blog</a>
-             <a href="/login" class="btn btn-success my-2">Login</a>
-             <a href="/courses" class="btn btn-primary my-2">Courses</a>
+             <a href="/blog" class="btn btn-danger my-2" id="bg">Browse Blog</a>
+             <a href="/login" class="btn btn-success my-2" id="bg1">Login</a>
+             <a href="/courses" class="btn btn-primary my-2" id="bg2">Courses</a>
          </p>
      </div>
  </section>

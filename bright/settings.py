@@ -26,9 +26,7 @@ SECRET_KEY = '$k=%h&3zhg83n-k%l@=8(*x-vtgf&b-tv$=$^^%d!hye@9+)$_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['brightcomputers.herokuapp.com']
-if DEBUG:
-    EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+ALLOWED_HOSTS = ['localhost','54.173.86.84','www.brightcomputerz.com','brightcomputerz.com']
 
 
 # Application definition
@@ -142,3 +140,12 @@ LOGIN_REDIRECT_URL='home'
 LOGIN_URL='login'
 
 django_heroku.settings(locals())
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'brightcomputersinfo@gmail.com'
+EMAIL_HOST_PASSWORD = 'urvbfozdfpcltepb'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'BRIGHT COMPUTERS Team <noreply@brightcomputerz.com>'
