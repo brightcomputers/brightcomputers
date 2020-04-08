@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.facebook',
+    'storages',
 
 ]
 
@@ -67,6 +68,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'bright.urls'
+
+
+
 
 TEMPLATES = [
     {
@@ -135,18 +139,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'static')
 
 ]
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-LOGIN_REDIRECT_URL='/'
+LOGIN_REDIRECT_URL='home'
 LOGIN_URL='login'
 
 django_heroku.settings(locals())
@@ -159,3 +163,16 @@ EMAIL_HOST_PASSWORD = 'urvbfozdfpcltepb'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'BRIGHT COMPUTERS Team <noreply@brightcomputerz.com>'
+
+AWS_ACCESS_KEY_ID='AKIA4OOKBVVVGZIMO44P'
+AWS_SECRET_ACCESS_KEY='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'
+AWS_STORAGE_BUCKET_NAME='brightusers'
+AWS_S3_CUSTOM_DOMAIN='%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS={
+    'CacheControl':'max-age=86400',
+}
+AWS_LOCATION='static'
+
+STATIC_URL ='https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN,AWS_LOCATION)
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE= 'storages.backends.s3boto3.S3Boto3Storage'
