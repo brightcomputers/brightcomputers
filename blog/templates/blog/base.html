@@ -7,6 +7,7 @@
         <title>Bright Computers - {{ title }}</title>
     {% else %}
         <title>Bright Computers</title>
+        <link rel="shortcut icon" type="image/png" href="static/favicon.png">
     {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{%static 'blog/bootstrap.css'%}">
@@ -14,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="{%static 'blog/style.css'%}">
     <link rel="stylesheet" type="text/css" href="{%static 'blog/style10.css'%}">
 
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v6.0&appId=555593801753355&autoLogAppEvents=1"></script>
 </head>
 <body>
 <script type="text/javascript" src="{%static 'blog/jquery.js'%}"></script>
@@ -54,7 +56,7 @@
                        <img src="{{ request.user.profile.image.url }}" class="rounded-circle account-img navbar-img" width="30px" height="25px" id="propic" >
 
                        {% else %}
-                       <img src="/media/full.jpg" alt="" class="rounded-circle account-img navbar-img" width="30px" height="25px" id="propic">
+                       <img src="media/full.jpg" alt="" class="rounded-circle account-img navbar-img" width="30px" height="25px" id="propic">
                        {% endif %}
                        <span>Hi {{ request.user|capfirst }}</span>
                        </a>
