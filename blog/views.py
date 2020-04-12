@@ -1,8 +1,12 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.contrib import messages
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 from django.contrib.auth.models import User
-from .models import Post
+from .models import Post,Comment,PostView
+from django import forms
+from .forms import CommentForm, PostForm
 
 def home(request):
     return render(request,'blog/home.html')
@@ -16,26 +20,71 @@ class PostListView(ListView):
     template_name = 'blog/blog.html'
     context_object_name = 'posts'
     ordering = ['-date_posted']
-    paginate_by = 5
+    paginate_by = 6
 
 class UserPostListView(ListView):
     model = Post
     template_name = 'blog/user_posts.html'
     context_object_name = 'posts'
-    paginate_by = 5
+    paginate_by = 6
 
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
         return Post.objects.filter(author=user).order_by('-date_posted')
 class PostDetailView(DetailView):
     model = Post
+    template_name = 'blog/post_detail.html'
+    context_object_name = 'post'
+    form = CommentForm()
+
+    def get_object(self):
+        obj = super().get_object()
+        if self.request.user.is_authenticated:
+            PostView.objects.get_or_create(
+                user=self.request.user,
+                post=obj
+            )
+        return obj
+
+    def get_context_data(self, **kwargs):
+
+        most_recent = Post.objects.order_by('-timestamp')[:3]
+        context = super().get_context_data(**kwargs)
+        context['most_recent'] = most_recent
+        context['page_request_var'] = "page"
+
+        context['form'] = self.form
+        return context
+
+    def post(self, request, *args, **kwargs):
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            post = self.get_object()
+            form.instance.user = request.user
+            form.instance.post = post
+            form.save()
+            return redirect(reverse("post-detail", kwargs={
+                'pk': post.pk
+            }))
+
 
 class PostCreateView(LoginRequiredMixin,CreateView):
+
     model = Post
-    fields = ['title','content']
+    template_name = 'blog/post_create.html'
+    form_class = PostForm
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Create'
+        return context
+
     def form_valid(self, form):
         form.instance.author = self.request.user
-        return super().form_valid(form)
+        form.save()
+        return redirect(reverse("post-detail", kwargs={
+            'pk': form.instance.pk
+        }))
 
 class PostUpdaetView(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
     model = Post

@@ -9,19 +9,27 @@
     color:yellow;
   }
 </style>
+<div class="container">
+  
+
+    <div class="row ">
     {% for post in posts %}
-        <article class="media content-section">
+    <div class="col-md-6">
+        <div class="img-thumbnail">
             <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}" id="blogprofile"width="60px" height="60px">
-            <div class="media-body">
-                <div class="article-metadata">
+
                     <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
                     <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
-                </div>
+
                 <h2><a class="article-title" href="{%url 'post-detail' post.id%}">{{post.title}}</a></h2>
                 <p class="article-content">{{post.content}}</p>
             </div>
-        </article>
+          </div>
+
+
+
     {% endfor %}
+    </div>
     <!--It is pagination-->
     {% if is_paginated %}
         {% if page_obj.has_previous %}
@@ -40,6 +48,7 @@
             <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
         {%endif%}
     {% endif %}
+  </div>
 
     <div class="container-fluid">
         <div class="row  links" style="background:#000066;">

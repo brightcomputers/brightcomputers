@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     {% if title %}
         <title>Bright Computers - {{ title }}</title>
+        <link rel="shortcut icon" type="image/png" href="static/favicon.png">
     {% else %}
         <title>Bright Computers</title>
         <link rel="shortcut icon" type="image/png" href="static/favicon.png">
@@ -15,7 +16,14 @@
     <link rel="stylesheet" type="text/css" href="{%static 'blog/style.css'%}">
     <link rel="stylesheet" type="text/css" href="{%static 'blog/style10.css'%}">
 
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v6.0&appId=555593801753355&autoLogAppEvents=1"></script>
+
+<script>
+  document.addEventListener('contextmenu',(e) =>{
+    e.preventDefault();
+
+  })
+</script>
+
 </head>
 <body>
 <script type="text/javascript" src="{%static 'blog/jquery.js'%}"></script>
@@ -94,11 +102,12 @@
 
 
 {% endblock content %}
+<footer class="footer">
 <div class="container container-fluid text-center" style="padding:0px 0px 0px 0px ">
     <div class=" container row  links " style="padding:0px 0px 20px 0px;font-size:20px">
         <center>&copy;All Copy Rights Reserved and Designed By Bright Computers </center>
 
     </div>
-
+</footer>
 </body>
 </html>
