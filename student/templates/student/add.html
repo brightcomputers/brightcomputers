@@ -74,8 +74,8 @@
 
 <style>
 body{
-background:linear-gradient(to bottom right, #c9c9db,red,white,black);
-}
+background:linear-gradient(to bottom right, #c9c9db,lightblue,white,yellow);
+  }
 #form{
 background: #e6e6ff;
 min-height:300px;
@@ -109,53 +109,81 @@ font-family:Agency FB;
 
  }
 </style>
+<h1 style="color:white;font-weight:bold;text-align:center;"><u>Contact Us</u></h1>
+<div class="container-fluid">
+		<div class="row  links" >
+      <div class="col-md-6">
 
-<div class="container">
-     <div class="row">
-         <div class="col-md-6 col-md-offset-3" id="form">
-             <center><b class="registration">Bright Application Form</b></center>
-              <span id="success" style="color:green"></span><br><br>
-             <form action="{% url 'NewPage'%}" method="post" onsubmit="return validation()">
-                 {% csrf_token %}
-                  <div class="form-group row">
-                      <label class="col-sm-2 col-form-label" >StudentName</label>
-                      <div class="col-sm-10"><input type="text" id="student" class="form-control"  name="name1" value="" minlength="4" maxlength="25" autocomplete="off" required > </div>
-                      <span id="studentname" class="text-danger font-weight-bold"></span>
-                 </div>
+<h2 style="color:white;" >Bright Computers</h2>
+<i class="fa fa-map-marker" style="font-weight:bold;font-size:20px"> Kalwakurthy,Nagarkurnool, <br>Telangana,India-509324</i><br>
+<h3 style="color:white;font-weight:bold;"><u>Call Us</u></h3>
+<i class="fa fa-phone" > Mobile:9640449394,8555848521</i><br>
+<h3 style="color:white;font-weight:bold;"><u>Mail us</u></h3>
+<i class="fa fa-envelope " ></i><a href="/"class="footera"> brightcomputersinfo@gmail.com</a>
+<h3 style="color:white;font-weight:bold;"><u> whatsapp us</u></h3>
+<i class="fa fa-whatsapp " >9640449394,</i><br>
+  </div>
+
+  <div class="col-md-6">
+    <div class="container">
 
 
-                 <div class="form-group row">
-                      <label class="col-sm-2 col-form-label" >course</label>
-                      <div class="col-sm-10"><input type="text" id="father" class="form-control"  name="name2" minlength="4" maxlength="25" autocomplete="off" required> </div>
-                      <span id="fathername" class="text-danger font-weight-bold"></span>
-                 </div>
-                 <div class="form-group row">
-                      <label class="col-sm-2 col-form-label" >Qualification:</label>
-                      <div class="col-sm-10"><input type="text" id="qualification" class="form-control" name="Q1" minlength="3" maxlength="25" autocomplete="off" required> </div>
-                      <span id="quals" class="text-danger font-weight-bold"></span>
-                 </div>
-                  <div class="form-group row">
-                      <label class="col-sm-2 col-form-label" >Email:</label>
-                      <div class="col-sm-10"><input type="email" class="form-control"  name="mail1" minlength="4" maxlength="30" autocomplete="off" required> </div>
-                 </div>
-                  <div class="form-group row">
-                      <label class="col-sm-2 col-form-label" >Address:</label>
-                      <div class="col-sm-10"><input type="text"  id="address" class="form-control"  name="address1" minlength="4" maxlength="25" autocomplete="off" required> </div>
-                      <span id="addresses" class="text-danger font-weight-bold"></span>
-                 </div>
-                  <div class="form-group row">
-                      <label class="col-sm-2 col-form-label" >phoneno:</label>
-                      <div class="col-sm-10"><input type="number" id="mobileno" class="form-control" name="ph1" minlength="10" maxlength="10" autocomplete="off" required> </div>
-                 </div>
+                 <center><b class="registration">Contact form</b></center>
+                  <span id="success" style="color:green"></span><br><br>
+                 <form action="{% url 'NewPage'%}" method="post" onsubmit="return validation()">
+                     {% csrf_token %}
+                      <div class="form-group row">
+                          <label class="col-sm-2 col-form-label" >StudentName</label>
+                          <div class="col-sm-10"><input type="text" id="student" class="form-control"  name="name1" value="" minlength="4" maxlength="25" autocomplete="off" required > </div>
+                          <span id="studentname" class="text-danger font-weight-bold"></span>
+                     </div>
 
-                 <div class="form-group"><br>
-                    <center> <button type="submit" class="btn btn-outline-info" >submit</button></center>
-                    <span id="mobiles" class="text-danger font-weight-bold"></span>
-                 </div>
-             </form>
 
-         </div>
-   </div>
- </div>
+                     <div class="form-group row">
+                          <label class="col-sm-2 col-form-label" >course</label>
+                          <div class="col-sm-10"><input type="text" id="father" class="form-control"  name="name2" minlength="4" maxlength="25" autocomplete="off" required> </div>
+                          <span id="fathername" class="text-danger font-weight-bold"></span>
+                     </div>
+                     <div class="form-group row">
+                          <label class="col-sm-2 col-form-label" >Qualification:</label>
+                          <div class="col-sm-10"><input type="text" id="qualification" class="form-control" name="Q1" minlength="3" maxlength="25" autocomplete="off" required> </div>
+                          <span id="quals" class="text-danger font-weight-bold"></span>
+                     </div>
+                      <div class="form-group row">
+                          <label class="col-sm-2 col-form-label" >Email:</label>
+                          <div class="col-sm-10"><input type="email" class="form-control"  name="mail1" minlength="4" maxlength="30" autocomplete="off" required> </div>
+                     </div>
+                      <div class="form-group row">
+                          <label class="col-sm-2 col-form-label" >Address:</label>
+                          <div class="col-sm-10"><input type="text"  id="address" class="form-control"  name="address1" minlength="4" maxlength="25" autocomplete="off" required> </div>
+                          <span id="addresses" class="text-danger font-weight-bold"></span>
+                     </div>
+                      <div class="form-group row">
+                          <label class="col-sm-2 col-form-label" >phoneno:</label>
+                          <div class="col-sm-10"><input type="number" id="mobileno" class="form-control" name="ph1" minlength="10" maxlength="10" autocomplete="off" required> </div>
+                     </div>
+
+                     <div class="form-group"><br>
+                        <center> <button type="submit" class="btn btn-outline-info" >submit</button></center>
+                        <span id="mobiles" class="text-danger font-weight-bold"></span>
+                     </div>
+                 </form>
+
+             </div>
+       </div>
+     </div>
+
+
+
+  </div>
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
 
 {% endblock content %}

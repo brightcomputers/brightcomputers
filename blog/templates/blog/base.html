@@ -23,7 +23,6 @@
 
   })
 </script>
-
 </head>
 <body>
 <script type="text/javascript" src="{%static 'blog/jquery.js'%}"></script>
@@ -31,17 +30,19 @@
 <script type="text/javascript" src="{%static 'blog/bootstrap.bundle.js'%}"></script>
 <script type="text/javascript" src="{%static 'blog/typed.min.js'%}"></script>
 
-<nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
-
-       <a class="navbar-brand text-warning font-weight-bold" href="{%url 'home'%}"><big class="active">BRIGHT CMPUTERS</big></a>
-       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">
-           <span class="navbar-toggler-icon"></span>
-       </button>
-       <div class="collapse navbar-collapse text-center" id="collapsenavbar">
-           <ul class="navbar-nav ml-auto">
-               <li class="nav-item">
+<nav class="navbar navbar-expand-md  navbar-dark  sticky-top" style="background-color: #0033CC;">
+<div class="container">
+       <a href="{%url 'home'%}"><big class="active"><img src="/static/bicon1.png" alt="logo" width="70"></big></a>
+       <a class="nav-link text-white" href="{%url 'home'%}"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
+       <a class="nav-link text-white" href="{%url 'blog-home'%}"><i class="fa fa-book fa-2x" aria-hidden="true"></i></a>
+        <!-- <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><li class="nav-item">
                    <a class="nav-link text-white" href="{%url 'home'%}">Home</a>
                </li>
+               <li class="nav-item">
+                   <a class="nav-link text-white" href="{%url 'blog-home'%}">Blog</a>
+               </li>
+               </ul>
                <li class="nav-item">
                    <a class="nav-link text-white" href="{%url 'blog-courses'%}">Courses</a>
                </li>
@@ -53,10 +54,13 @@
                    <a class="nav-link text-white" href="{%url 'blog-home'%}">Blog</a>
                </li>
              </ul>
-               <!--<li class="nav-item">
+             <li class="nav-item">
+                 <a href="{% url 'register' %}"class="nav-link text-white">SignUp</a>
+             </li>
+               <li class="nav-item">
                    <a class="nav-link text-white" href="form.html">Registration</a>
                </li>-->
-               <ul class="navbar-nav">
+               <ul class="navbar-nav ">
                {% if request.user.is_authenticated %}
                    <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -66,28 +70,26 @@
                        {% else %}
                        <img src="media/full.jpg" alt="" class="rounded-circle account-img navbar-img" width="30px" height="25px" id="propic">
                        {% endif %}
-                       <span>Hi {{ request.user|capfirst }}</span>
+
                        </a>
-                       <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                       <a class="dropdown-item bg-dark text-white" href="{% url 'post-create' %}" >Create Post</a>
-                       <a class="dropdown-item bg-dark text-white" href="{% url 'profile' %}" >My Profile</a>
-                       <a class="dropdown-item bg-dark text-white" href="{% url 'password_change' %}" >Change Password</a>
-                       <a class="dropdown-item bg-dark text-white" href="{% url 'logout' %}" >Logout</a>
+                       <div class="dropdown-menu navbar-dark" aria-labelledby="navbarDropdown" style="background-color: #0033CC;">
+                       <a class="dropdown-item navbar-dark text-white" href="{% url 'post-create' %}"style="background-color: #0033CC;" >Create Post</a>
+                       <a class="dropdown-item navbar-dark text-white" href="{% url 'profile' %}" style="background-color: #0033CC;">My Profile</a>
+                       <a class="dropdown-item navbar-dark text-white" href="{% url 'password_change' %}" style="background-color: #0033CC;">Change Password</a>
+                       <a class="dropdown-item navbar-dark text-white" href="{% url 'logout' %}" style="background-color: #0033CC;">Logout</a>
 
 
                      </div>
                    </li>
                {%else%}
                    <li class="nav-item">
-                       <a href="{% url 'login' %}"class="nav-link text-white">Login</a>
+                       <a href="{% url 'login' %}"class="nav-link text-white"><i class="fa fa-user fa-2x" aria-hidden="true"></i></a>
                    </li>
-                   <li class="nav-item">
-                       <a href="{% url 'register' %}"class="nav-link text-white">SignUp</a>
-                   </li>
+
                {%endif%}
            </ul>
-       </div>
 
+</div>
 </nav>
 
 
@@ -102,12 +104,10 @@
 
 
 {% endblock content %}
-<footer class="footer">
-<div class="container container-fluid text-center" style="padding:0px 0px 0px 0px ">
-    <div class=" container row  links " style="padding:0px 0px 20px 0px;font-size:20px">
-        <center>&copy;All Copy Rights Reserved and Designed By Bright Computers </center>
 
-    </div>
-</footer>
+    <nav class="navbar fixed-bottom navbar-dark bg-dark">
+      <a class="navbar-brand textcenter" href="{% url 'login' %}">&copy;2020 powered By Bright Computers</a>
+      <a href="/NewPage" class="btn btn-success my-2" id="bg1">Contact Us</a>
+    </nav>
 </body>
 </html>

@@ -150,7 +150,7 @@ body{
   border-radius:50px 0px 50px 0px;
 }
 #hd{
-  color:pink;
+  color:dark;
   font-size:40px;
   font-weight:bold;
 }
@@ -173,13 +173,51 @@ h2{
 .footerb{
   color:yellow;
 }
+body{
+background:linear-gradient(to bottom right, #c9c9db,white,white,yellow);
+  }
+#form{
+background: #e6e6ff;
+min-height:300px;
+border:ridge 8px;
+}
+.registration{
+font-size:25px;
+font-family:Comic Sans MS;
+color: #b2004c;
+font-weight:700;
+}
+.form-control{
+border:2px ridge;
+border-radius:20px;
+font-family:Cooper Black;
+}
+#form1{
+background:#ffe8f7;
+height:350px;
+
+border:ridge 8px;
+}
+.selection1{
+border-radius:5px;
+}
+.col-form-label{
+font-family:Agency FB;
+}
+.form-group button{
+  width:150px;
+  color:green;
+
+ }
+</style>
+
 
    </style>
    <script>
     window.onload = function () {
         console.log("loaded")
         var typed = new Typed('#typed', {
-            strings: ["Welcome to Bright Computers","We develop Web Applications ", " We provide courses on New Technologies","Learn Python", "Web development", "Data Science", "Machine Learning", "and programming and other concepts :)"],
+            strings: ["We develop Web Applications ", " We provide courses on New Technologies","Learn Python", "Web development", "Data Science", "Machine Learning", "and programming and other concepts :)"],
             backSpeed: 15,
             smartBackspace: true,
             backDelay: 1200,
@@ -189,21 +227,21 @@ h2{
         });
     };
 </script>
-   <section class="jumbotron text-center " style="background: #002f0b;">
+   <section class="jumbotron text-center " >
      <div class="container primary">
-         <img src="/static/bicon.png" alt="logo" width="120">
-         <h1 id="hd"class="jumbotron-heading"><span id="typed"></span></h1>
+
+         <h1 id="hd"class="jumbotron-heading">Welcome to Bright Computers<br><span id="typed"></span></h1>
          <p id ="pt" class="lead text-muted">are you Confused on which course to take?  Browse courses and find out
              the best course for you. Its free!<br>Bright Computers is ready to teach basics and those coding
              techniques to people in short time .</p>
          <p>
-             <a href="/blog" class="btn btn-danger my-2" id="bg">Browse Blog</a>
-             <a href="/login" class="btn btn-success my-2" id="bg1">Login</a>
-             <a href="/courses" class="btn btn-primary my-2" id="bg2">Courses</a>
+             <a href="/services" class="btn btn-danger my-2" id="bg">Our services</a>
+             <a href="/NewPage" class="btn btn-success my-2" id="bg1">Contact Us</a>
+             <a href="/courses" class="btn btn-primary my-2" id="bg2">Our Courses</a>
          </p>
      </div>
  </section>
-
+<!--
  <div class="container-fluid text-left text-dark headerset">
         <div class="carousel slide" id="demo" data-ride="carousel" style="width:100%;" scrollamount="20%">
             <ul class="carousel-indicators">
@@ -287,108 +325,18 @@ h2{
           </table>
 
 
-        </div>
-<div class="">
+        </div>-->
+        <h1 class="text-center" style="font-size:40px;font-weight:bold;">
+         our Courses</h1>
+
+<div class="container fluid ">
+
+  <div class="row">
+                  <!-- Blog Entries Column -->
+  <div class="col-md-6 mt-2 left">
 
 
-<section class="" >
-    <h1 class="text-center"style="font-size:60px;font-weight:bold;"> Our Services</h1>
-    <div class="card-box">
-   <div class="card">
-     <div class="card-image">
-       <img src="{% static 'bgstar.jpg'%}" alt="">
-     </div>
-     <div class="profile-image">
-       <img src="{% static 'web.jpg'%}" alt="">
-     </div>
-     <div class="card-content">
-       <h3>Web Development</h3>
-       <p>now days web applications are used to complte any task .</p>
-     </div>
-
-   </div>
-   <div class="card">
-     <div class="card-image">
-       <img src="{% static 'bgstar.jpg'%}" alt="">
-     </div>
-     <div class="profile-image">
-       <img src="{% static 'gd.jpg'%}" alt="">
-     </div>
-     <div class="card-content">
-       <h3>Graphic Design</h3>
-       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-     </div>
-
-   </div>
-   <div class="card">
-     <div class="card-image">
-       <img src="{% static 'bgstar.jpg'%}" alt="">
-     </div>
-     <div class="profile-image">
-       <img src="{% static 'seo.jpg'%}" alt="">
-     </div>
-     <div class="card-content">
-       <h3>SEO</h3>
-       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-     </div>
-
-   </div>
-
-
-</div>
-</section>
-<section class="" >
-
-    <div class="card-box">
-   <div class="card">
-     <div class="card-image">
-       <img src="{% static 'bgstar.jpg'%}" alt="">
-     </div>
-     <div class="profile-image">
-       <img src="{% static 'st.jpg'%}" alt="">
-     </div>
-     <div class="card-content">
-       <h3>Software Training</h3>
-       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-     </div>
-
-   </div>
-   <div class="card">
-     <div class="card-image">
-       <img src="{% static 'bgstar.jpg'%}" alt="">
-     </div>
-     <div class="profile-image">
-       <img src="{% static 'cb.jpg'%}" alt="">
-     </div>
-     <div class="card-content">
-       <h3>Computer Education</h3>
-       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-     </div>
-
-   </div>
-   <div class="card">
-     <div class="card-image">
-       <img src="{% static 'bgstar.jpg'%}" alt="">
-     </div>
-     <div class="profile-image">
-       <img src="{% static 'job.jpg'%}" alt="">
-     </div>
-     <div class="card-content">
-       <h3>Job & Freelancing</h3>
-       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-     </div>
-
-   </div>
-
-
-</div>
-</section>
-</div>
-
-<div class="" style="background:#7dffff;">
-    <h1 class="text-center" style="font-size:60px;font-weight:bold;">
-     our Courses</h1>
-<marquee behavior="alternate" onmouseover="this.stop();" onmouseout="this.start();"scrollamount="10">
+<!--<marquee behavior="alternate" onmouseover="this.stop();" onmouseout="this.start();"scrollamount="10">-->
   <table id="courses"align="center" cellspacing="0px" bgcolor="#ebebe0" height="auto">
             <tr><td> <button class="py"><a href="{%url 'blog-courses'%}" style="text-decoration:none;font-size:20px;">ComputerBasics</a></button></td>
                 <td> <button class="c1"><a href="{%url 'blog-courses'%}" style="text-decoration:none;font-size:20px;">C,C++</a></button></td>
@@ -447,7 +395,58 @@ h2{
 
 
 
-    </marquee>
+    <!--</marquee>-->
+    </div>
+    <div class="col-md-6">
+      <div class="container">
+
+
+                   <center><b class="registration">Registrer Now</b></center>
+                    <span id="success" style="color:green"></span><br><br>
+                   <form action="{% url 'NewPage'%}" method="post" onsubmit="return validation()">
+                       {% csrf_token %}
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" >StudentName</label>
+                            <div class="col-sm-10"><input type="text" id="student" class="form-control"  name="name1" value="" minlength="4" maxlength="25" autocomplete="off" required > </div>
+                            <span id="studentname" class="text-danger font-weight-bold"></span>
+                       </div>
+
+
+                       <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" >course</label>
+                            <div class="col-sm-10"><input type="text" id="father" class="form-control"  name="name2" minlength="4" maxlength="25" autocomplete="off" required> </div>
+                            <span id="fathername" class="text-danger font-weight-bold"></span>
+                       </div>
+                       <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" >Qualification:</label>
+                            <div class="col-sm-10"><input type="text" id="qualification" class="form-control" name="Q1" minlength="3" maxlength="25" autocomplete="off" required> </div>
+                            <span id="quals" class="text-danger font-weight-bold"></span>
+                       </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" >Email:</label>
+                            <div class="col-sm-10"><input type="email" class="form-control"  name="mail1" minlength="4" maxlength="30" autocomplete="off" required> </div>
+                       </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" >Address:</label>
+                            <div class="col-sm-10"><input type="text"  id="address" class="form-control"  name="address1" minlength="4" maxlength="25" autocomplete="off" required> </div>
+                            <span id="addresses" class="text-danger font-weight-bold"></span>
+                       </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" >phoneno:</label>
+                            <div class="col-sm-10"><input type="number" id="mobileno" class="form-control" name="ph1" minlength="10" maxlength="10" autocomplete="off" required> </div>
+                       </div>
+
+                       <div class="form-group"><br>
+                          <center> <button type="submit" class="btn btn-outline-info" >submit</button></center>
+                          <span id="mobiles" class="text-danger font-weight-bold"></span>
+                       </div>
+                   </form>
+
+               </div>
+         </div>
+
+
+    </div>
     </div>
 
     <center><h2 class="color-3" ><b>About Bright Computers</b></center>  </h2>
@@ -523,51 +522,12 @@ h2{
 
 
 <br>
+<br>
+<br>
+<br>
 
 
 
-    <div class="container-fluid">
-        <div class="row  links" style="background:#000066;">
-            <div class="col-md-4">
-                <h1 style="color:white;font-weight:bold;"><u>Our Courses</u></h1>
-                <a href="{%url 'blog-courses'%}" class="footera">C language</a><br>
-                <a href="{%url 'blog-courses'%}"class="footera">Python</a><br>
-                <a href="{%url 'blog-courses'%}"class="footera">Django,SQL</a><br>
-                <a href="{%url 'blog-courses'%}"class="footera">HTML5,CSS3</a><br>
-                <a href="{%url 'blog-courses'%}"class="footera">JAVASCRIPT</a><br>
-                <a href="{%url 'blog-courses'%}"class="footera">BOOTSTRAP,JQUERY</a><br>
-                <a href="{%url 'blog-courses'%}"class="footera">PGDCA</a><br>
-                <a href="{%url 'blog-courses'%}"class="footera">PHOTOSHOP</a><br>
-                <a href="{%url 'blog-courses'%}"class="footera">CORELDRAW</a><br>
-                <a href="{%url 'blog-courses'%}"class="footera">PAGEMAKER</a><br>
-                <a href="{%url 'blog-courses'%}"class="footera">DTP</a><br>
-
-            </div>
-            <div class="col-md-4">
-                <h1 style="color:white;font-weight:bold;"><u>Our Services</u></h1>
-                <a href="{%url 'blog-services'%}"class="footerb">Web Development</a><br>
-                <a href="{%url 'blog-services'%}"class="footerb">SEO</a><br>
-                <a href="{%url 'blog-services'%}"class="footerb">Graphic Design</a><br>
-                <a href="{%url 'blog-services'%}"class="footerb">software Training</a><br>
-                <a href="{%url 'blog-services'%}"class="footerb">Computer Education</a><br>
-                <a href="{%url 'blog-services'%}"class="footerb">placements</a><br>
-                <a href="{%url 'blog-services'%}"class="footerb">Job & Freelancing</a><br>
-                <a href="{%url 'blog-services'%}"class="footerb">DTP Works</a><br>
-                <a href="{%url 'blog-services'%}"class="footerb">Online Works</a><br>
-
-            </div>
-            <div class="col-md-4">
-                <h1 style="color:white;font-weight:bold;"><u>Contact Us</u></h1>
-                <h3 style="color:yellow">Bright Computers</h3>
-                <i class="fa fa-map-marker" style="color:yellow;font-weight:bold;font-size:20px"> Kalwakurthy,<br> Nagarkurnool, Telangana</i><br>
-                <h3 style="color:white;font-weight:bold;"><u>Call Us</u></h3>
-                <i class="fa fa-phone" style="color:yellow"> Mobile:9640449394,8555848521</i><br>
-                <h3 style="color:white;font-weight:bold;"><u>Mail us</u></h3>
-                <i class="fa fa-envelope " style="color:yellow"></i><a href="/"class="footera"> brightcomputersinfo@gmail.com</a>
-                <h3 style="color:white;font-weight:bold;"><u> whatsapp us</u></h3>
-                <i class="fa fa-whatsapp" style="color:yellow">9640449394,</i><br>
-            </div>
-        </div>
 
 
 {% endblock content %}

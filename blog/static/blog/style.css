@@ -91,14 +91,23 @@
 .footer h6{
     line-height:50px;
 }
+
+.navbar{
+    background-color:#0000ff;
+
+
+}
 @media(max-width:992px){
     .navbar-toggler{
             margin:10px 0px 10px 30px;
-            background-color:#ff4f81;
+            background-color:blue;
         }
         .navbar-toggler:hover{
                 background-color:black;
                 border-color:#ff4f81;
+        }
+        .container{
+          max-width: 970px;
         }
         .navbar-dark{
                 background-color:#fff;
@@ -109,6 +118,13 @@
             }
             .navbar-nav li a:hover{
                 background-color:#ff4f81;
+            }
+            .img-responsive{
+                max-width: 100%;
+                height: auto;
+              }
+
+
             }
             #location{
               height:auto;
@@ -161,6 +177,10 @@
             font-size:62px;
             font-weight:bold;
         }
+        .img-responsive{
+        max-width: 100%;
+        height: auto;
+    }
         #location{
           height:auto;
           width:100%;
@@ -245,6 +265,10 @@
       width:50px;
 
     }
+    .img-responsive{
+        max-width: 100%;
+        height: auto;
+    }
 
     #blogprofile{
       height: 60px;
@@ -296,13 +320,3 @@
           text-color:white;
 
         }
-
-.footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 130px;
-    padding: 15px;
-    background-color: #2C3E50;
-    }

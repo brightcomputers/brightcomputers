@@ -38,11 +38,11 @@
 
         }
         form{
-          border:2px ridge black ;
+
           width:500px;
-          height:auto;
-          box-shadow:1px 1px 10px 2px #333;
-          background:#ccccff;
+          height:500px;
+          box-shadow: 0 16px 48px #E3E7EB;
+
 
         }
         form:hover{
@@ -144,19 +144,26 @@
                 <a class="m-auto" href="{% url 'password_reset' %}">Forgot password</a>
             </div>
             <div class="border-top pt-3">
+
+              <button type="button" id="fb" class="btn btn-primary"><a href="{% provider_login_url "facebook" method="oauth2" %}">Facebook</a></button>
+
+            <a href="#">
+              <button type="button" id="fb" class="btn btn-danger"><a href="{% provider_login_url "google" %}">Google </a></button>
+            </a><br>
                 <small class="text-muted">
                     Don't have an account?<a href="{%url 'register'%}">Sign Up</a>
                 </small>
             </div>
               {{form.errors}}
       </form>
-      <p>-- OR --</p>
 
-      <button type="button" id="fb" class="btn btn-dark"><a href="{% provider_login_url "facebook" method="oauth2" %}">Facebook</a></button>
-
-    <a href="#">
-      <button type="button" id="fb" class="btn btn-dark"><a href="{% provider_login_url "google" %}">Google </a></button>
-    </a>
       <br>
   </div>
+  
+  <br>
+    <br>
+    <br>
+
+
+
 {% endblock content %}

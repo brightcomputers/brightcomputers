@@ -2,35 +2,50 @@
 {% load static%}
 {% block content %}
 <style >
+  body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        background-color: #fdfdfd;
+    }
+
   .footera{
     color:yellow;
   }
   .footerb{
     color:yellow;
   }
+
 </style>
-<div class="container">
-  
+<div class="container fluid ">
 
-    <div class="row ">
+  <div class="row">
+          <!-- Blog Entries Column -->
+          <div class="col-md-8 mt-3 left">
+
+
+
     {% for post in posts %}
-    <div class="col-md-6">
-        <div class="img-thumbnail">
-            <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}" id="blogprofile"width="60px" height="60px">
 
+        <div class="img-thumbnail">
+
+                    <h1><a class="article-title" href="{%url 'post-detail' post.id%}">{{post.title}}</a></h1>
+                    <a href="{% url 'user-posts' post.author.username %}"><img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}" id="blogprofile"width="60px" height="60px"></a>
                     <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
                     <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
 
-                <h2><a class="article-title" href="{%url 'post-detail' post.id%}">{{post.title}}</a></h2>
-                <p class="article-content">{{post.content}}</p>
+
+                <p class="article-content">{{post.content|slice:":200"}}</p>
+                <a href="{% url 'user-posts' post.author.username %}" class="btn btn-primary">Read More &rarr;</a>
             </div>
-          </div>
+
 
 
 
     {% endfor %}
-    </div>
+</div>
+{% include 'blog/sidebar.html' %}
     <!--It is pagination-->
+    <div class="container fluid">
     {% if is_paginated %}
         {% if page_obj.has_previous %}
             <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
@@ -48,48 +63,11 @@
             <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
         {%endif%}
     {% endif %}
-  </div>
-
-    <div class="container-fluid">
-        <div class="row  links" style="background:#000066;">
-            <div class="col-md-4">
-                <h1 style="color:white;font-weight:bold;"><u>Our Courses</u></h1>
-                <a href="{%url 'blog-courses'%}" class="footera">C language</a><br>
-                <a href="{%url 'blog-courses'%}"class="footera">Python</a><br>
-                <a href="{%url 'blog-courses'%}"class="footera">Django,SQL</a><br>
-                <a href="{%url 'blog-courses'%}"class="footera">HTML5,CSS3</a><br>
-                <a href="{%url 'blog-courses'%}"class="footera">JAVASCRIPT</a><br>
-                <a href="{%url 'blog-courses'%}"class="footera">BOOTSTRAP,JQUERY</a><br>
-                <a href="{%url 'blog-courses'%}"class="footera">PGDCA</a><br>
-                <a href="{%url 'blog-courses'%}"class="footera">PHOTOSHOP</a><br>
-                <a href="{%url 'blog-courses'%}"class="footera">CORELDRAW</a><br>
-                <a href="{%url 'blog-courses'%}"class="footera">PAGEMAKER</a><br>
-                <a href="{%url 'blog-courses'%}"class="footera">DTP</a><br>
-
-            </div>
-            <div class="col-md-4">
-                <h1 style="color:white;font-weight:bold;"><u>Our Services</u></h1>
-                <a href="{%url 'blog-services'%}"class="footerb">Web Development</a><br>
-                <a href="{%url 'blog-services'%}"class="footerb">SEO</a><br>
-                <a href="{%url 'blog-services'%}"class="footerb">Graphic Design</a><br>
-                <a href="{%url 'blog-services'%}"class="footerb">software Training</a><br>
-                <a href="{%url 'blog-services'%}"class="footerb">Computer Education</a><br>
-                <a href="{%url 'blog-services'%}"class="footerb">placements</a><br>
-                <a href="{%url 'blog-services'%}"class="footerb">Job & Freelancing</a><br>
-                <a href="{%url 'blog-services'%}"class="footerb">DTP Works</a><br>
-                <a href="{%url 'blog-services'%}"class="footerb">Online Works</a><br>
-
-            </div>
-            <div class="col-md-4">
-                <h1 style="color:white;font-weight:bold;"><u>Contact Us</u></h1>
-                <h3 style="color:yellow">Bright Computers</h3>
-                <i class="fa fa-map-marker" style="color:yellow;font-weight:bold;font-size:20px"> Kalwakurthy,<br> Nagarkurnool, Telangana</i><br>
-                <h3 style="color:white;font-weight:bold;"><u>Call Us</u></h3>
-                <i class="fa fa-phone" style="color:yellow"> Mobile:9640449394,8555848521</i><br>
-                <h3 style="color:white;font-weight:bold;"><u>Mail us</u></h3>
-                <i class="fa fa-envelope " style="color:yellow"></i><a href="/"class="footera"> brightcomputersinfo@gmail.com</a>
-                <h3 style="color:white;font-weight:bold;"><u> whatsapp us</u></h3>
-                <i class="fa fa-whatsapp" style="color:yellow">9640449394,</i><br>
-            </div>
-        </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
 {% endblock content %}
