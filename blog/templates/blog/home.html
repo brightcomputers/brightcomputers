@@ -18,6 +18,10 @@
            font-size:26px;
            color:blue;
        }
+       .bright1{
+         height:100px;
+         width:100px;
+       }
        marquee:hover{
            color:#ff4f81;
            transition:0.9s all;
@@ -217,7 +221,7 @@ font-family:Agency FB;
     window.onload = function () {
         console.log("loaded")
         var typed = new Typed('#typed', {
-            strings: ["We develop Web Applications ", " We provide courses on New Technologies","Learn Python", "Web development", "Data Science", "Machine Learning", "and programming and other concepts :)"],
+            strings: ["Welcome to Bright Computers","We develop Web Applications ", " We provide courses on New Technologies","Learn Python", "Web development", "Data Science", "Machine Learning", "and programming and other concepts :)"],
             backSpeed: 15,
             smartBackspace: true,
             backDelay: 1200,
@@ -229,15 +233,15 @@ font-family:Agency FB;
 </script>
    <section class="jumbotron text-center " >
      <div class="container primary">
-
-         <h1 id="hd"class="jumbotron-heading">Welcome to Bright Computers<br><span id="typed"></span></h1>
+       <img class="bright1"src="{%static 'bicon.png'%}" width="120px" hieght="120px">
+         <h1 id="hd"class="jumbotron-heading"><span id="typed"></span></h1>
          <p id ="pt" class="lead text-muted">are you Confused on which course to take?  Browse courses and find out
              the best course for you. Its free!<br>Bright Computers is ready to teach basics and those coding
              techniques to people in short time .</p>
          <p>
-             <a href="/services" class="btn btn-danger my-2" id="bg">Our services</a>
+             <a href="/services" class="btn btn-danger my-2" id="bg">services</a>
              <a href="/NewPage" class="btn btn-success my-2" id="bg1">Contact Us</a>
-             <a href="/courses" class="btn btn-primary my-2" id="bg2">Our Courses</a>
+             <a href="/courses" class="btn btn-primary my-2" id="bg2">Courses</a>
          </p>
      </div>
  </section>

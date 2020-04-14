@@ -2,21 +2,10 @@
 {% load static%}
 {% block content %}
 <style >
-  body {
-        font-family: "Roboto", sans-serif;
-        font-size: 18px;
-        background-color: #fdfdfd;
-    }
 
-  .footera{
-    color:yellow;
-  }
-  .footerb{
-    color:yellow;
-  }
 
 </style>
-<div class="container fluid ">
+<div class="container ">
 
   <div class="row">
           <!-- Blog Entries Column -->
@@ -43,6 +32,7 @@
 
     {% endfor %}
 </div>
+
 {% include 'blog/sidebar.html' %}
     <!--It is pagination-->
     <div class="container fluid">
@@ -63,11 +53,9 @@
             <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
         {%endif%}
     {% endif %}
+    </div>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
 </div>
+
+
 {% endblock content %}
