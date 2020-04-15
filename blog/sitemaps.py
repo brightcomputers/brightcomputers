@@ -3,19 +3,19 @@ from blog.models import Post
 from django.urls import reverse
 
 class PostSitemap(Sitemap):
-    pass
-    #def items(self):
-        #return Post.objects.all()
+
+    def items(self):
+        return Post.objects.all()
 
 class StaticViewSitemap(Sitemap):
     def items(self):
-        return ['blog-about']
+        return ['blog-home']
     def location(self,item):
         return reverse(item)
 
 class StaticViewSitemap1(Sitemap):
     def items(self):
-        return ['blog-services']
+        return ['blog-about']
     def location(self,item):
         return reverse(item)
 
