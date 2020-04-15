@@ -2,6 +2,19 @@
 {% load static %}
 {%block content%}
 {%load crispy_forms_tags%}
+<style >
+  #postimg{
+      hieght:00px;
+
+  }
+  
+  	body{
+  		background:linear-gradient(to bottom right, lightblue,white,white,lightblue);
+  	  }
+
+</style>
+
+
 
     <article class="media content-section">
         <img class="rounded-circle article-img" src="{{object.author.profile.image.url}}" id="userphoto1" width="50px" height="50px">
@@ -16,8 +29,10 @@
                     </div>
                 {%endif%}
             </div>
+
             <h2 class="article-title">{{object.title}}</h2>
             <p class="article-content">{{object.content}}</p>
+
 
         </div>
     </article>
@@ -29,7 +44,7 @@
 
 
 
-
+<div class="container">
     <div class="container">
     <div class="post-comments">
                   <header>
@@ -80,5 +95,11 @@
                 {% else %}
                 <a href="{% url 'login' %}" class="btn btn-primary">Login to comment</a>
                 {% endif %}
+    </div>
+    <br>
+    <br>
+    <br>
+    <br><br>
+    <br>
     </div>
 {% endblock content %}

@@ -2,9 +2,30 @@
 {% load static%}
 {% block content %}
 <style >
-
+  body{
+    background:linear-gradient(to bottom right, lightblue,white,white,lightblue);
+    }
 
 </style>
+
+
+
+
+<div class="container">
+  <form method="POST" action="/search/">
+    {% csrf_token %}
+
+
+
+    <input class="form-control col-md-8  mt-3 left" name='srh' type="text" placeholder="Search your Blog" aria-label="Search">
+    <button class="btn btn-outline-success col-md-8 " type="submit">Search</button>
+
+  </form>
+
+</div>
+
+
+
 <div class="container ">
 
   <div class="row">
@@ -17,7 +38,7 @@
 
         <div class="img-thumbnail">
 
-                    <h1><a class="article-title" href="{%url 'post-detail' post.id%}">{{post.title}}</a></h1>
+                    <h2><a class="article-title" href="{%url 'post-detail' post.id%}">{{post.title}}</a></h2>
                     <a href="{% url 'user-posts' post.author.username %}"><img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}" id="blogprofile"width="60px" height="60px"></a>
                     <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
                     <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>

@@ -1,7 +1,17 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 {% load crispy_forms_tags %}
-    <div class="content-section">
+<style>
+	body{
+		background:linear-gradient(to bottom right, lightblue,white,white,lightblue);
+	  }
+</style>
+<div class="container">
+      <div class="row">
+
+
+<div class="col-md-4 mt-3 left">
+
         <div class="media">
             <img src="{{ user.profile.image.url }}" class="rounded-circle account-img" width="50px" height="50px" id="propic" >
             <div class="main-body">
@@ -12,7 +22,7 @@
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Profile</legend>
+                <h2 class="border-bottom mb-4 text-center">Profile</h2>
                 {{ u_form|crispy }}
                 {{ p_form|crispy }}
             </fieldset>
@@ -25,5 +35,8 @@
                 <button type="submit" class="btn btn-outline-info">Update</button>
             </div>
         </form>
+
+    </div>
+    </div>
     </div>
 {% endblock content %}

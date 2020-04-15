@@ -1,0 +1,47 @@
+{% extends 'blog/base.html' %}
+{% load static%}
+{% block content %}
+<style>
+	body{
+		background:linear-gradient(to bottom right, lightblue,white,white,lightblue);
+	  }
+</style>
+<<div class="container">
+  <div class="row">
+          <!-- Blog Entries Column -->
+          <div class="col-md-8 mt-3 left">
+
+<h2>This is the results of your search</h2>
+
+
+
+{%if messages%}
+  {% for k in messages%}
+
+  <h3>{{k}}</h3>
+    {%endfor%}
+  {%endif%}
+
+{%if sr%}
+{% for k in sr %}
+
+
+<div class="img-thumbnail">
+
+            <h1><a class="article-title" href="{%url 'post-detail' k.id%}">{{k.title}}</a></h1>
+            <a href="{% url 'user-posts' k.author.username %}"><img class="rounded-circle article-img" src="{{ k.author.profile.image.url }}" id="blogprofile"width="60px" height="60px"></a>
+            <a class="mr-2" href="{% url 'user-posts' k.author.username %}">{{ k.author }}</a>
+            <small class="text-muted">{{ k.date_posted|date:"F d, Y" }}</small>
+
+
+        <p class="article-content">{{k.content|slice:":200"}}</p>
+        <a href="{% url 'user-posts' k.author.username %}" class="btn btn-primary">Read More &rarr;</a>
+    </div>
+
+  {% endfor %}
+{%endif%}
+</div>
+{% include 'blog/sidebar.html' %}
+</div></div>
+<br><br><br><br><br>
+{% endblock content %}

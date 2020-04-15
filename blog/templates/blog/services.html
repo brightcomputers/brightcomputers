@@ -2,230 +2,33 @@
 {% load static%}
 {% block content %}
 <style>
-		body{
-			font-family: tahoma;
-			text-align: justify;
-		}
-		.p{
-			margin-bottom: 30px;
-		}
-		h2{
-			margin-bottom: 47px;
-			margin-top: 12px;
-		}
-
-
-	</style>
-	<style>
-	.card{
-	  font-family: "Candara", sans-serif;
-	  width: 350px;
-	  height:450px;
-	  overflow: hidden;
-	  background: #fff;
-	  border-radius: 10px;
-	  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-	  display: flex;
-	  flex-direction: column;
-	  padding:none;
+	body{
+		background:linear-gradient(to bottom right, #c9c9db,yellow,white,yellow);
 	  }
-
-	.card-image img{
-	  width: 100%;
-	  height: 160px;
-	  border-top-left-radius: 10px;
-	  border-top-right-radius: 10px;
-	  object-fit: cover;
-	}
-
-	.profile-image img{
-	  z-index: 1;
-	  width: 120px;
-	  height: 120px;
-	  position: relative;
-	  margin-top: -75px;
-	  display: block;
-	  margin-left: auto;
-	  margin-right: auto;
-	  border-radius: 100px;
-	  border: 10px solid #fff;
-	  transition-duration: 0.4s;
-	  transition-property: transform;
-	}
-
-	.profile-image img:hover{
-	  transform: scale(1.1);
-	}
-
-	.card-content h3{
-	  font-size: 25px;
-	  text-align: center;
-	  margin: 0;
-	}
-
-	.card-content p{
-	  font-size: 16px;
-	  text-align: justify;
-	  padding: 0 20px 5px 20px;
-	}
-	.card-box{
-	  flex-wrap: wrap;
-	  width: 100%;
-	  height:auto;
-	  display: flex;
-	  justify-content: space-around;
-	  align-items: center;
-	  overflow: hidden;
-	  padding:10px;
-	}
-
-	.footera{
-		color:yellow;
-	}
-	.footerb{
-		color:yellow;
-	}
 </style>
-	<div class="">
+	<div class="container">
 
 
 	<section class="" >
 			<h1 class="text-center"style="font-size:60px;font-weight:bold;"> Our Services</h1>
-			<div class="card-box">
-		 <div class="card">
-			 <div class="card-image">
-				 <img src="{% static 'bgstar.jpg'%}" alt="">
-			 </div>
-			 <div class="profile-image">
-				 <img src="{% static 'web.jpg'%}" alt="">
-			 </div>
-			 <div class="card-content">
-				 <h3>Web Development</h3>
-				 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-			 </div>
-
-		 </div>
-		 <div class="card">
-			 <div class="card-image">
-				 <img src="{% static 'bgstar.jpg'%}" alt="">
-			 </div>
-			 <div class="profile-image">
-				 <img src="{% static 'gd.jpg'%}" alt="">
-			 </div>
-			 <div class="card-content">
-				 <h3>Graphic Design</h3>
-				 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-			 </div>
-
-		 </div>
-		 <div class="card">
-			 <div class="card-image">
-				 <img src="{% static 'bgstar.jpg'%}" alt="">
-			 </div>
-			 <div class="profile-image">
-				 <img src="{% static 'seo.jpg'%}" alt="">
-			 </div>
-			 <div class="card-content">
-				 <h3>SEO</h3>
-				 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-			 </div>
-
-		 </div>
-
-
+			<<h1>this page is under construction</h1>
+</section>
 	</div>
-	</section>
-	<section class="" >
+<section class="jumbotron text-center " >
+	<div class="container primary">
 
-			<div class="card-box">
-		 <div class="card">
-			 <div class="card-image">
-				 <img src="{% static 'bgstar.jpg'%}" alt="">
-			 </div>
-			 <div class="profile-image">
-				 <img src="{% static 'st.jpg'%}" alt="">
-			 </div>
-			 <div class="card-content">
-				 <h3>Software Training</h3>
-				 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-			 </div>
-
-		 </div>
-		 <div class="card">
-			 <div class="card-image">
-				 <img src="{% static 'bgstar.jpg'%}" alt="">
-			 </div>
-			 <div class="profile-image">
-				 <img src="{% static 'cb.jpg'%}" alt="">
-			 </div>
-			 <div class="card-content">
-				 <h3>Computer Education</h3>
-				 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-			 </div>
-
-		 </div>
-		 <div class="card">
-			 <div class="card-image">
-				 <img src="{% static 'bgstar.jpg'%}" alt="">
-			 </div>
-			 <div class="profile-image">
-				 <img src="{% static 'job.jpg'%}" alt="">
-			 </div>
-			 <div class="card-content">
-				 <h3>Job & Freelancing</h3>
-				 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-			 </div>
-
-		 </div>
-
-
+			<h1 id="hd"class="jumbotron-heading">Welcome to Bright Computers<br><span id="typed"></span></h1>
+			<p id ="pt" class="lead text-muted">are you Confused on which course to take?  Browse courses and find out
+					the best course for you. Its free!<br>Bright Computers is ready to teach basics and those coding
+					techniques to people in short time .</p>
+			<p>
+					<a href="/services" class="btn btn-danger my-2" id="bg">services</a>
+					<a href="/NewPage" class="btn btn-success my-2" id="bg1">Contact Us</a>
+					<a href="/courses" class="btn btn-primary my-2" id="bg2">Courses</a>
+			</p>
 	</div>
-	</section>
-	</div>
+</section>
 
 
 
-
-<div class="container-fluid">
-		<div class="row  links" style="background:#000066;">
-				<div class="col-md-4">
-						<h1 style="color:white;font-weight:bold;"><u>Our Courses</u></h1>
-						<a href="{%url 'blog-courses'%}" class="footera">C language</a><br>
-						<a href="{%url 'blog-courses'%}"class="footera">Python</a><br>
-						<a href="{%url 'blog-courses'%}"class="footera">Django,SQL</a><br>
-						<a href="{%url 'blog-courses'%}"class="footera">HTML5,CSS3</a><br>
-						<a href="{%url 'blog-courses'%}"class="footera">JAVASCRIPT</a><br>
-						<a href="{%url 'blog-courses'%}"class="footera">BOOTSTRAP,JQUERY</a><br>
-						<a href="{%url 'blog-courses'%}"class="footera">PGDCA</a><br>
-						<a href="{%url 'blog-courses'%}"class="footera">PHOTOSHOP</a><br>
-						<a href="{%url 'blog-courses'%}"class="footera">CORELDRAW</a><br>
-						<a href="{%url 'blog-courses'%}"class="footera">PAGEMAKER</a><br>
-						<a href="{%url 'blog-courses'%}"class="footera">DTP</a><br>
-
-				</div>
-				<div class="col-md-4">
-						<h1 style="color:white;font-weight:bold;"><u>Our Services</u></h1>
-						<a href="{%url 'blog-services'%}"class="footerb">Web Development</a><br>
-						<a href="{%url 'blog-services'%}"class="footerb">SEO</a><br>
-						<a href="{%url 'blog-services'%}"class="footerb">Graphic Design</a><br>
-						<a href="{%url 'blog-services'%}"class="footerb">software Training</a><br>
-						<a href="{%url 'blog-services'%}"class="footerb">Computer Education</a><br>
-						<a href="{%url 'blog-services'%}"class="footerb">placements</a><br>
-						<a href="{%url 'blog-services'%}"class="footerb">Job & Freelancing</a><br>
-						<a href="{%url 'blog-services'%}"class="footerb">DTP Works</a><br>
-						<a href="{%url 'blog-services'%}"class="footerb">Online Works</a><br>
-
-				</div>
-				<div class="col-md-4">
-						<h1 style="color:white;font-weight:bold;"><u>Contact Us</u></h1>
-						<h3 style="color:yellow">Bright Computers</h3>
-						<i class="fa fa-map-marker" style="color:yellow;font-weight:bold;font-size:20px"> Kalwakurthy,<br> Nagarkurnool, Telangana</i><br>
-						<h3 style="color:white;font-weight:bold;"><u>Call Us</u></h3>
-						<i class="fa fa-phone" style="color:yellow"> Mobile:9640449394,8555848521</i><br>
-						<h3 style="color:white;font-weight:bold;"><u>Mail us</u></h3>
-						<i class="fa fa-envelope " style="color:yellow"></i><a href="/"class="footera"> brightcomputersinfo@gmail.com</a>
-						<h3 style="color:white;font-weight:bold;"><u> whatsapp us</u></h3>
-						<i class="fa fa-whatsapp" style="color:yellow">9640449394,</i><br>
-				</div>
-		</div>
 {% endblock content %}

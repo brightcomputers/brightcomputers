@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
+from django.db.models import Count, Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
@@ -15,6 +16,32 @@ def blog(request):
         'posts':Post.objects.all()
     }
     return render(request,'blog/blog.html',context)
+
+
+
+def search(request):
+    if request.method=='POST':
+        srch=request.POST['srh']
+
+        if srch:
+            match=Post.objects.filter(Q(title__icontains=srch) |
+                                      Q(date_posted__icontains=srch)
+                                      )
+            if match:
+                return render(request,'blog/search_results.html',{'sr':match})
+
+            else:
+                messages.error(request,'no result found')
+        else:
+            return redirect('/search/')
+
+    return render(request,'blog/search_results.html')
+
+
+
+
+
+
 class PostListView(ListView):
     model = Post
     template_name = 'blog/blog.html'
