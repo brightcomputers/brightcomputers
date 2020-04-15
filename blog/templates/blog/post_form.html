@@ -1,127 +1,20 @@
 {%extends 'blog/base.html'%}
-{% load static %}
 {%block content%}
 {%load crispy_forms_tags%}
 <style>
-    *{
-      padding:0px;
-      margin:0px;
-    }
+	body{
+		background:linear-gradient(to bottom right, lightblue,white,white,lightblue);
+	  }
+</style>
+<div class=" container col-8  mb-5 mt-5">
+<h3>{{ title }} Change an article</h3>
+{{ form.media }}
+<form method="POST" >
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
 
-
-       input{
-         border-radius:5px;
-         border:1px solid blue;
-         height:35px;
-         width:100%;
-       }
-
-       input[type=text]{
-           width:50%;
-           margin-left:0px;
-
-       }
-       input[type=textarea]{
-           width:auto;
-           margin-left:115px;
-
-       }
-
-
-
-       }
-       .form-group button{
-         width:100px;
-
-        }
-        form{
-          border:2px ridge black ;
-          width:auto;
-          height:auto;
-          box-shadow:1px 1px 10px 2px #333;
-
-
-        }
-
-       @media(min-width:575px) and (max-width:767px){
-         input{
-             border-radius:5px;
-             border:1px solid blue;
-             height:35px;
-             width:200px;
-         }
-         input[type=text]{
-             width:50%;
-             margin-left:5px;
-
-         }
-         input[type=pwd]{
-             width:50%;
-             margin-left:5px;
-
-         }
-       }
-       @media(min-width:480px) and (max-width:574px){
-         input{
-             border-radius:5px;
-             border:1px solid blue;
-             height:35px;
-             width:200px;
-         }
-         .form-group button{
-           width:200px;
-
-          }
-          input[type=text]{
-              width:50%;
-              margin-left:5px;
-
-          }
-          input[type=pwd]{
-              width:50%;
-              margin-left:5px;
-
-          }
-       }
-       @media(max-width:479px){
-         input{
-             border-radius:5px;
-             border:1px solid blue;
-             height:35px;
-             width:200px;
-
-         }
-         .form-group button{
-           width:200px;
-
-          }
-          input[type=text]{
-              width:50%;
-              margin-left:5px;
-
-          }
-          input[type=pwd]{
-              width:50%;
-              margin-left:5px;
-
-          }
-
-       }
-   </style>
-<div class="container content-section" align="center">
-  <br><br>
-  <form method="post">
-        <p>post your new post</p>
-        <h2 align="center">Blog Post</h2>
-        {% csrf_token %}
-        <label for="title">Title:</label>
-        {{form.title}}<br><br>
-        <label for="pwd">Content:</label>
-        {{form.content}}
-        <div class="form-group">
-            <button class="btn btn-info" type="submit">Post</button>
-        </div>
-          {{form.errors}}
-    </form>
 </div>
-{%endblock%}
+
+{% endblock content %}
