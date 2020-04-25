@@ -11,7 +11,7 @@ class PostView(models.Model):
     def __str__(self):
         return self.user.username
 class Post(models.Model):
-    title=models.CharField(max_length=30)
+    title=models.CharField(max_length=150)
     content=tinymce_models.HTMLField()
     date_posted=models.DateTimeField(default=timezone.now)
     author=models.ForeignKey(User,on_delete=models.CASCADE)

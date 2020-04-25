@@ -27,6 +27,11 @@ urlpatterns = [
     path('about/',views.about,name='blog-about'),
     path('services/',views.services,name='blog-services'),
     path('courses/',views.courses,name='blog-courses'),
+    path('ms/',views.ms,name='ms'),
+    path('graphic/',views.graphic,name='graphic'),
+    path('web/',views.web,name='blog-web'),
+    path('python/',views.python,name='blog-python'),
+    path('django/',views.django,name='blog-django'),
 
     path('password_change/', auth_views.PasswordChangeView.as_view(template_name='blog/password_change.html'),
         name='password_change'),

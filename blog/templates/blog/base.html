@@ -37,7 +37,8 @@
 
        <a class="nav-link text-white" href="{%url 'home'%}"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
        <a class="nav-link text-white" href="{%url 'blog-home'%}"><i class="fa fa-book fa-2x" aria-hidden="true"></i></a>
-       <a class="nav-link  text-white" href="{% url 'post-create' %}" ><i class="fa fa-pencil fa-2x" aria-hidden="true"></i></a>
+       <!--<a class="nav-link  text-white" href="{% url 'post-create' %}" ><i class="fa fa-pencil fa-2x" aria-hidden="true"></i></a>-->
+       <a class="nav-link text-white" href="{%url 'blog-services'%}"><i class="fa fa-youtube-play fa-2x" aria-hidden="true"></i></a>
        <ul class="navbar-nav ">
        {% if request.user.is_authenticated %}
            <li class="nav-item dropdown">

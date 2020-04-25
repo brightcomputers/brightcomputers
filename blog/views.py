@@ -142,3 +142,18 @@ def services(request):
 
 def courses(request):
     return render(request,'blog/courses.html')
+
+def ms(request):
+    return render(request,'blog/ms.html')
+
+def graphic(request):
+    return render(request,'blog/graphic.html')
+
+def web(request):
+    return render(request,'blog/web.html')
+
+def python(request):
+    return render(request,'blog/python.html')
+
+def django(request):
+    return render(request,'blog/django.html')

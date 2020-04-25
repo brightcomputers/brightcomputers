@@ -3,122 +3,13 @@
 {% block content %}
 
 <style>
-       *{
-           margin:0px;
-           padding:0px;
-       }
-       div div div a:link{
-           color:white;
-           font-size:20px;
-       }
-       div div div a:hover{
-           color:#41f481;
-       }
-       marquee{
-           font-size:26px;
-           color:blue;
-       }
-       .bright1{
-         height:100px;
-         width:100px;
-       }
-       marquee:hover{
-           color:#ff4f81;
-           transition:0.9s all;
-       }
-       marquee i:hover{
-           border-right:3px solid #ff4f81;
-           border-left:3px solid #ff4f81;
-       }
-       #table1{
-         background:#ffe0ff;
-         border:ridge;
-       }
-       .t1{
-         font-size:20px;
-         font-style:bold;
 
-       }
-       {
-   			border:1px solid blue;
-   			border-radius:20px
-
-
-   		}
-
-.card{
-  font-family: "Candara", sans-serif;
-  width: 350px;
-  height:450px;
-  overflow: hidden;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
-  padding:none;
-  }
-
-.card-image img{
-  width: 100%;
-  height: 160px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  object-fit: cover;
-}
-
-.profile-image img{
-  z-index: 1;
-  width: 120px;
-  height: 120px;
-  position: relative;
-  margin-top: -75px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 100px;
-  border: 10px solid #fff;
-  transition-duration: 0.4s;
-  transition-property: transform;
-}
-
-.profile-image img:hover{
-  transform: scale(1.1);
-}
-
-.card-content h3{
-  font-size: 25px;
-  text-align: center;
-  margin: 0;
-}
-
-.card-content p{
-  font-size: 16px;
-  text-align: justify;
-  padding: 0 20px 5px 20px;
-}
-.card-box{
-  flex-wrap: wrap;
-  width: 100%;
-  height:auto;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  overflow: hidden;
-  padding:10px;
-}
-
-.footera{
-  color:yellow;
-}
-.footerb{
-  color:yellow;
-}
 
 body{
   font-family: tahoma;
   text-align: justify;
 }
+
 .aimage{
   border:3px solid blue;
   border-radius:0px 50px 0px 50px;
@@ -126,6 +17,19 @@ body{
 
 .aimage:hover{
   border-radius:50px 0px 50px 0px;
+
+
+}
+#cimage{
+  height:200px;
+  width:200px
+  border:1px solid black;
+
+}
+#cimage:hover{
+
+  height:250px;
+  width:250px
 
 
 }
@@ -178,10 +82,10 @@ h2{
   color:yellow;
 }
 body{
-background:linear-gradient(to bottom right, lightblue,lightyellow,lightblue,lightyellow);
+background:linear-gradient(to bottom right, ,,,);
   }
   .jumbotron{
-  background:linear-gradient(to bottom right, lightyellow,lightblue,lightblue,lightyellow);
+  background:linear-gradient(to bottom right, lightyellow,lightyellow,lightyellow,white);
     }
 #form{
 background: #e6e6ff;
@@ -219,7 +123,7 @@ font-family:Agency FB;
 </style>
 
 
-   </style>
+
    <script>
     window.onload = function () {
         console.log("loaded")
@@ -240,7 +144,7 @@ font-family:Agency FB;
          <h1 id="hd"class="jumbotron-heading"><span id="typed"></span></h1>
          <p id ="pt" class="lead text-muted">are you Confused on which course to take?  Browse courses and find out
              the best course for you. Its free!<br>Bright Computers is ready to teach basics and those coding
-             techniques to people in short time .</p>
+             techniques to people in short time .Bright Computers is Providing Tutorials for all Subjects of Computer from Basics to Technologies. Now it is free service for all people who need practical and theory content.</p>
          <p>
              <a href="/services" class="btn btn-danger my-2" id="bg">services</a>
              <a href="/NewPage" class="btn btn-success my-2" id="bg1">Contact Us</a>
@@ -333,6 +237,58 @@ font-family:Agency FB;
 
 
         </div>-->
+
+<div class="container-fluid mainContainer">
+	<div class="row my-4 mx-4">
+
+		<div class="col-md-6 col-lg-4 text-center">
+				<img class="rounded-circle" id="cimage" src="/media/vclass1.jpg" width="200" height="200">
+				<h2>Free Video Courses</h2>
+				<p>
+          we are providing Free video courses for all computer subjects who need live classes.
+
+				</p>
+				<p>
+
+								<a href="{% url 'blog-services'%}"><button class="btn btn-outline-success">Start Watching »</button></a>
+
+				</p>
+		</div>
+
+		<div class="col-md-6 col-lg-4 text-center">
+				<img class="rounded-circle" id="cimage" src="/media/q.jpg" width="200" height="200">
+				<h2>Articles for Doubts</h2>
+				<p>
+						when you have doubts or queries then goto blog to post your doubts and to get information.
+				</p>
+				<p>
+
+								<a href="{% url 'blog-home'%}"><button class="btn btn-outline-success">Post Your Query »</button></a>
+
+				</p>
+		</div>
+
+					<div class="col-md-6 col-lg-4 text-center">
+							<img class="rounded-circle" id="cimage" src="/media/contact.jpg" width="200" height="200">
+							<h2> Contact Us </h2>
+							<p>
+									To get more information about any thing related to meterial or soubts in website then we are with you.
+							</p>
+							<p>
+
+											<a href="{% url 'ms'%}"><button class="btn btn-outline-success">Contact Us »</button></a>
+
+							</p>
+					</div>
+
+</div>
+</div>
+
+
+
+
+
+
         <h1 class="text-center" style="font-size:40px;font-weight:bold;">
          our Courses</h1>
 
@@ -408,7 +364,7 @@ font-family:Agency FB;
       <div class="container">
 
 
-                   <center><b class="registration">Registrer Now</b></center>
+                   <center><b class="registration">Register Now</b></center>
                     <span id="success" style="color:green"></span><br><br>
                    <form action="{% url 'NewPage'%}" method="post" onsubmit="return validation()">
                        {% csrf_token %}
@@ -456,7 +412,7 @@ font-family:Agency FB;
     </div>
     </div>
 
-    <center><h2 class="color-3" ><b>About Bright Computers</b></center>  </h2>
+    <center><h2 class="color-3" ><b>About Bright Computers</b></h2></center>
     <div class="container">
     <div class="row">
         <div class="col-md-5">
@@ -466,8 +422,7 @@ font-family:Agency FB;
         <div class="col-md-7 about-right">
 
 
-            <h1>Mission and Vision</h1>
-            <p>
+                <p>
 
                 Bright Computers is certified by An ISO 9001:2015 and Regd By DGE & T Permitted by GOVT OF INDIA.
                 we are providing  Technical Education for graduation people and also Economical support.
@@ -485,7 +440,7 @@ font-family:Agency FB;
             <div class="container">
             <div class="row">
               <div class="col-md-7 about-right">
-                <h1>Management Team</h1>
+
                 <p class="p">
 
                   Bright Computers Management have more than 6 years of experience in IT Sector in various Areas.
@@ -515,12 +470,18 @@ font-family:Agency FB;
                   <img src="{%static 'lab.jpg'%}" class="aimage" width="300px" height="300px">
               </div>
               <div class="col-md-7 about-right">
-              <h1>Software Training Infrastructure</h1>
+
               <p class="p">
 
                   Bright Computers Training Institute has good Lab facilities located in Telangana .
                   Bright Computers Training Institute having modern classroom with latest teaching aids.
                   Full fledged Lab PCs connected in network and Open Source/Development software.
+                  </p>
+                  <P>
+                  If you have any queries then ping Blog page of website and post your doubt as a question then you will get replay very soon.
+                  But if you want post any query you must login to our website with login page if you don’t have an account click a signup button which is in bottom page of login.
+                  <br>our goal is  to make people  as weapon with full skills for earning Money and  to settle in IT Sector.
+
                 </p>
               </div>
               </div>

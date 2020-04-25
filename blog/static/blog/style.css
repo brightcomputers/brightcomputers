@@ -142,9 +142,26 @@
                height: 50px;
                width: 50px;
              }
+             #vi{
+               height: 80px;
+               width: 60px;
+             }
              #icon{
                height: 50px;
                width: 50px;
+
+             }
+             #cimage{
+               height:100px;
+               width:100px
+               border:1px solid black;
+
+             }
+             #cimage:hover{
+
+               height:150px;
+               width:150px
+
 
              }
              .Contact{
@@ -197,9 +214,26 @@
            height: 50px;
            width: 50px;
          }
+         #vi{
+           height: 80px;
+           width: 60px;
+         }
          #icon{
            height: 50px;
            width: 50px;
+
+         }
+         #cimage{
+           height:100px;
+           width:100px
+           border:1px solid black;
+
+         }
+         #cimage:hover{
+
+           height:150px;
+           width:150px
+
 
          }
          .Contact{
@@ -240,6 +274,10 @@
       height: 50px;
       width: 50px;
     }
+    #vi{
+      height: 80px;
+      width: 60px;
+    }
     #propic{
       height: 50px;
       width:50px;
@@ -267,6 +305,19 @@
        width: 50px;
 
      }
+     #cimage{
+       height:100px;
+       width:100px
+       border:1px solid black;
+
+     }
+     #cimage:hover{
+
+       height:150px;
+       width:150px
+
+
+     }
      .Contact{
          float:none;
          font-size:20px;
@@ -275,11 +326,11 @@
 }
 .navbar-nav li a{
     font-size:17px;
-    padding:10px 30px!important;
+    padding:0px 0px!important;
 }
 .navbar-nav li a:hover{
-    border-right:3px solid #ff4f81;
-    border-left:3px solid #ff4f81;
+    border-right:0px solid #ff4f81;
+    border-left:0px solid #ff4f81;
     transition:0.5s all;
 }
 .fonts{
@@ -289,8 +340,8 @@
 
 
 .active{
-            border-right:3px solid #ff4f81;
-            border-left:3px solid #ff4f81;
+            border-right:0px solid #ff4f81;
+            border-left:0px solid #ff4f81;
         }
       #fb{
           text-color:white;
